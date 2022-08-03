@@ -344,53 +344,48 @@ td {
   justify-content: center;
 }
 
-.client__contacts-wrap {
-  display: flex;
-}
-
 .client__contact {
   position: relative;
-  display: block;
-  width: fit-content;
+  display: inline-block;
   margin-right: 5px;
 }
 
-.client__contact-content {
-  display: block;
-  position: absolute;
-  bottom: 30px;
-  background-color: var(--black);
-  width: max-content;
-  padding: 8px 14px;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  color: var(--white);
-  z-index: 1000;
-  opacity: 0;
+.client__contact .client__contact-content {
   visibility: hidden;
-}
-
-.client__contact-content::after {
-  content: '';
-  display: block;
+  min-width: 200px;
+  background-color: var(--black);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
   position: absolute;
-  left: 1px;
-  top: 32px;
-  background: var(--black);
-  border-left: 9px solid var(--white);
-  border-right: 9px solid var(--white);
-  border-top: 12px solid var(--black);
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -100px;
 }
 
-.client__contact:hover > .client__contact-content {
-  opacity: 1;
+.client__contact .client__contact-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--black) transparent transparent transparent;
+}
+
+.client__contact:hover .client__contact-content {
   visibility: visible;
 }
 
-.client__contact-content:hover > .client__contact-content {
-  opacity: 1;
-  visibility: visible;
+.client__contacts-wrap {
+  display: flex;
+  max-width: 130px;
+  flex-wrap: wrap;
+}
+.client__contact--hidden {
+  display: none;
 }
 
 .modal__cancel {
